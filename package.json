@@ -1,6 +1,6 @@
 {
-  "homepage": "http://Geeeva.github.io/Color-recognition",
-  "name": "color-recognition-depl",
+  "homepage": "http://Geeeva.github.io/Bild",
+  "name": "bild",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,6 +19,7 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "add-asset-html-webpack-plugin": "^3.0.1",
     "gh-pages": "^2.0.0"
   }
 }

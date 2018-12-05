@@ -7,7 +7,7 @@ class Footer extends Component {
         super();
 
         this.state = {
-            footerBgChange: false,
+            footerBgChange: false
         }
     }
     render() {
@@ -20,7 +20,7 @@ class Footer extends Component {
                             <path fill="pink" style={{transition: "fill .3s ease-in-out"}} d="M-1,327h1925V46C1461-87.8,646,144-1,208V327z"/>
                         </clipPath>
                         <g clipPath="url(#bg-form)" d="M-1,327h1925V46C1461-87.8,646,144-1,208V327z">
-                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " brightGrey" : " darkGrey" )} width="1930" height="769"/>
+                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " darkGrey" : " brightGrey" )} width="1930" height="769"/>
                         </g>
                     </svg>    
                     <svg id="footer-bg-xl" viewBox="0 147 600 146.8">
@@ -29,7 +29,7 @@ class Footer extends Component {
                             <path fill={this.props.footerBgColor} style={{transition: "fill .3s ease-in-out"}} d="M-0.3,293.8h600.9V191.9c-144.6-48.5-399-10.7-600.9,12.5V293.8z"/>
                         </clipPath>
                         <g clipPath="url(#bg-form-xl)" height="100%" width="100%">
-                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " brightGrey" : " darkGrey" )} width="1930" height="769"/>
+                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " darkGrey" : " brightGrey" )} width="1930" height="769"/>
                         </g>
                     </svg>
 
@@ -39,7 +39,7 @@ class Footer extends Component {
                             <path fill={this.props.footerBgColor} style={{transition: "fill .3s ease-in-out"}} d="M-0.3,286.9h600.9V181.4c-144.6-50.2-399-11.1-600.9,13V286.9z"/>
                         </clipPath>
                         <g clipPath="url(#bg-form-md)" height="100%" width="100%">
-                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " brightGrey" : " darkGrey" )} width="1930" height="769"/>
+                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " darkGrey" : " brightGrey" )} width="1930" height="769"/>
                         </g>
                     </svg>
 
@@ -49,7 +49,7 @@ class Footer extends Component {
                             <path fill={this.props.footerBgColor} style={{transition: "fill .3s ease-in-out"}} d="M0,434h599V240.3C428,171,201.3,198.9,0,243V434z"/>
                         </clipPath>
                         <g clipPath="url(#bg-form-sm)" height="100%" width="100%">
-                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " brightGrey" : " darkGrey" )} width="1930" height="769"/>
+                            <rect className={"footer-bg" + (this.state.footerBgChange === true ? " darkGrey" : " brightGrey" )} width="1930" height="769"/>
                         </g>
                     </svg>
 
