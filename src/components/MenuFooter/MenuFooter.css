@@ -1,0 +1,19 @@
+.NavFooter {
+	padding-left: 40px;
+}
+
+/*** Start of medium tablet styles ***/
+@media screen and (max-width: 768px) {
+	.NavFooter {
+		padding-left: 0px;
+		grid-column: 1 / 3;
+		padding-left: 0px;
+		margin-right: 0px;
+		grid-area: menu;
+		align-self: center;
+	}
+}
+
+@media screen and (max-width: 479px) {
+
+}

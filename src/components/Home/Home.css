@@ -1,0 +1,183 @@
+.Home {
+	background-color: #fefefe;
+}
+
+.container-fluid.Portfolio {
+	background: url("../.././assets/images/slider-background.png") no-repeat center;
+	background-size: cover;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 178px;
+}
+
+ @-webkit-keyframes coloring {
+        100% {
+            opacity: 1;
+        }
+}
+
+@keyframes coloring {
+    100% {
+        opacity: 1;
+    }
+}
+
+.HeroBanner img {
+	margin-top: 100px;
+	width: 100%;
+  	height: auto;
+  	opacity: 0;
+  	animation: coloring 1s ease-out forwards;
+}
+
+.HeroBannerTxt {
+	font-size: 16px;
+	color: #aeadad;
+	margin-top: 50px;
+	margin-bottom: 30px;
+	opacity: 0;
+	animation: coloring 1s ease-out forwards;
+}
+
+.HeroBannerBtn {
+	width: 180px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	padding-right: 20px;
+	margin-bottom: 50px;
+	background-color: #2cc26b;
+	border: none;
+	color: #f2f2f2;
+	font-size: 14px;
+	text-transform: uppercase;
+	opacity: 0;
+	animation: coloring 1s ease-out forwards;
+}
+
+.GetToKnow {
+	background: rgba(0,0,0,0.1); 
+	background-size: cover;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: -178px;
+}
+
+.Video {
+	display: grid;
+	grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+}
+
+.styles_modal__gNwvD {
+	padding: 0;
+	background: none;
+}
+
+.Modal {
+	background: none;
+	border: none;
+}
+
+.GetToKnowTitle {
+	font-size: 24px;
+	margin-bottom: 32px;
+	color: #aeadad;
+	text-align: left;
+}
+
+.GetToKnowTitleTxt {
+	font-size: 14px;
+	color: #aeadad;
+	text-align: left;
+	margin-bottom: 37px;
+}
+
+@media screen and (max-width: 1252px) {
+	
+	.YouTube {
+		padding-right: 20px;
+	}
+
+	.YouTube .Modal img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+/*** Start of large tablet styles ***/
+@media screen and (max-width: 991px) {
+
+}
+
+/*** Start of medium tablet styles ***/
+@media screen and (max-width: 768px) {
+
+	.HeroBannerTxt {
+		margin-top: 200px;
+	}
+
+	.HeroBannerBtn {
+		width: 180px;
+		padding-top: 17px;
+		padding-bottom: 17px;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-bottom: 50px;
+		background-color: #2cc26b;
+		border: none;
+		color: #f2f2f2;
+		font-size: 14px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.Video {
+		grid-template-columns: 100%;
+    	grid-template-rows: 50% 50%;
+    	grid-template-areas: 'txt' 'video';
+	}
+
+	.GetToKnow {
+		padding-bottom: 0px;
+	}
+
+	.GetToKnowWrapper {
+		grid-area: txt;
+		grid-column: 1 / 3;
+	}
+
+	.YouTube {
+		grid-area: video;
+		grid-column: 1 / 3;
+		margin-top: 0px;
+		margin-bottom: 15px;
+
+
+
+
+		
+		padding-bottom: 20px;
+		padding-right: 0px;
+		position: relative;
+	}
+
+	.YouTube .Modal img {
+		max-width: 300px;
+		max-height: auto;
+	}
+
+	iframe {
+		width: 380px;
+	}
+}
+
+/*** Start of phone styles ***/
+@media screen and (max-width: 479px) {
+	.YouTube {
+		margin-top: 25px;
+		padding-bottom: 20px;
+		padding-right: 0px;
+	}
+}

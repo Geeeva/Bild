@@ -1,0 +1,151 @@
+.Slideshow {
+	padding-top: 50px;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.LinkWrapper {
+    position: relative;
+}
+
+.LinkWrapper img:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.LinkWrapper:hover img:nth-child(2), .LinkWrapper:focus img:nth-child(2) {
+    display: block;
+    opacity: 1;
+}
+
+.FeaturedTitle {
+    color: #9c9b9b;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.FeaturedTxt {
+    color: #9c9b9b;
+    font-size: 14px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.DetailsTitle {
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #9c9b9b;
+}
+
+.FirstImage {
+    position: absolute;
+    top: 70px;
+    left: 90px;
+    z-index: 4;
+}
+
+.SecondImage {
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    z-index: 0;
+}
+
+.DetailsTxt {
+    margin-bottom: 55px;
+    max-width: 480px;
+    color: #9c9b9b;
+    margin: 0 auto 55px auto;
+}
+
+.slick-list {
+    max-width: 960px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.slick-slide img {
+    margin: 0 auto;
+}
+
+.slick-prev {
+    background: url('../../../assets/images/left.svg') no-repeat center center;
+    left: 230px;
+    top: 305px;
+    height: 50px;
+    width: 50px;
+    z-index: 3;
+    transition: background .3s;
+}
+
+.slick-prev:hover, .slick-prev:focus {
+    background: url('../../../assets/images/left-active.svg') no-repeat center center;
+}
+
+.slick-next {
+    background: url('../../../assets/images/right.svg') no-repeat center center;
+    right: 230px;
+    top: 305px;
+    height: 50px;
+    width: 50px;
+    z-index: 3;
+    transition: background .4s;
+}
+
+.slick-next:hover, .slick-next:focus {
+    background: url('../../../assets/images/right-active.svg') no-repeat center center;
+}
+
+.slick-prev:before, .slick-next:before {
+	display: none;
+}
+
+
+@media screen and (max-width: 1252px) {
+    .FirstImage {
+        display: none;
+        left: 0;
+    }
+
+    .SecondImage {
+        display: none;
+        right: 0;
+    }
+
+    .slick-slider {
+        margin-bottom: 20px;
+    }
+
+    .slick-prev {
+        left: 35%;
+        transform: none;
+        top: 105%;
+    }
+
+    .slick-next {
+        right: 35%;
+        transform: none;
+        top: 105%;
+    }
+}
+
+/*** Start of large tablet styles ***/
+@media screen and (max-width: 991px) {
+}
+
+/*** Start of medium tablet styles ***/
+@media screen and (max-width: 768px) {
+    
+}
+
+/*** Start of phone styles ***/
+@media screen and (max-width: 479px) {
+
+}

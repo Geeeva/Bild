@@ -4,11 +4,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "clarifai": "^2.8.1",
-    "gsap": "^2.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "1.1.5"
+    "react-image-gallery": "^0.8.12",
+    "react-meta-tags": "^0.7.2",
+    "react-responsive-modal": "^3.5.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5",
+    "react-slick": "^0.23.2",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
