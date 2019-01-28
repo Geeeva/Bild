@@ -5,10 +5,10 @@ import './MenuHeader.css';
 const menuHeader = () => {
     return (
         <ul className="NavHeader">
-            <NavLink className="home" to="/">Home</NavLink>
-            <NavLink className="about" to="/about">About</NavLink>
-            <NavLink className="work" to="/work">Work</NavLink>
-            <NavLink className="contact" to="/contact">Contact</NavLink>
+            <NavLink className="HOME" to="/" exact activeStyle={{color: '#2ecc71'}}>Home</NavLink>
+            <NavLink className="ABOUT" to="/about" exact activeStyle={{color: '#2ecc71'}}>About</NavLink>
+            <NavLink className="WORK" to="/work" exact activeStyle={{color: '#2ecc71'}}>Work</NavLink>
+            <NavLink className="CONTACT" to="/contact" exact activeStyle={{color: '#2ecc71'}}>Contact</NavLink>
         </ul>
     )
 }

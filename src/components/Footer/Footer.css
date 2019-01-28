@@ -25,6 +25,7 @@
 
 .Message {
 	color: #efefef;
+	font-family: MyriadProRegular;
 	font-size: 24px;
 	margin-left: 10px;
 	align-self: center;
@@ -39,10 +40,16 @@
 	padding-bottom: 15px;
 	padding-right: 22px;
 	border: none;
-	color: #fff;
+	color: #f2f2f2;
 	font-size: 14px;
     background-color: #2ecc71;
     justify-self: end;
+    transition: background-color .3s, color .3s;
+}
+
+.FindOutBtn:hover, .FindOutBtn:focus {
+	background-color: #34df7d;
+	color: #fff;
 }
 
 .CopyrightWrapper {
@@ -60,10 +67,12 @@
 	margin-left: 10px;
 	padding-top: 30px;
 	padding-bottom: 30px;
+	font-family: MyriadProRegular;
 	font-size: 12px;
 }
 
 .NavFooter {
+	font-family: MyriadProRegular;
 	padding-left: 0px;
 }
 
@@ -113,6 +122,8 @@
 	}
 
 	.CopyrightWrapper {
+		padding-top: 15px;
+		padding-bottom: 15px;
 		grid-template-columns: 100%;
 	    grid-template-rows: 50% 50%;
 		grid-template-areas: 'menu copyright';
@@ -121,10 +132,10 @@
 	.Copyright {
 		grid-column: 1 / 3;
 		margin-right: 0px;
-		padding-top: 15px;
-		padding-bottom: 0px;
 		align-self: center;
 		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 }
 

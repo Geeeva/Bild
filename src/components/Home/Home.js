@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './Home.css';
-import Route from 'react-router-dom/Route';
 import {BrowserRouter as Router, Link, NavLink, Redirect, Prompt} from 'react-router-dom';
-import HeroBanner from'../.././assets/images/devices.png';
+import HeroBanner from '../.././assets/images/devices.png';
 import Video from '../.././assets/images/video.jpg';
 import Work from '../Work/Work';
 import "slick-carousel/slick/slick.css";
@@ -14,6 +13,7 @@ import MetaTags from 'react-meta-tags';
 class Home extends Component {
 	state = {
       	open: false,
+      	posts: []
     };
    
     onOpenModal = () => {

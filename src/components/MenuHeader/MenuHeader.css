@@ -5,9 +5,16 @@
 }
 
 .NavHeader a {
+	font-family: MyriadProRegular;
 	font-size: 18px;
 	text-decoration: none;
+	text-transform: uppercase;
 	padding-right: 45px;
+	transition: color .4s;
+}
+
+.NavHeader a:hover, .NavHeader a:focus {
+	color: #2ecc71!important;
 }
 
 .NavHeader a:visited {

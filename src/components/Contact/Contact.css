@@ -1,0 +1,205 @@
+.ContactWrapper {
+	padding-left: 0px;
+	padding-bottom: 0px;
+	background-color:  #2ecc71;
+}
+
+.ContactWrapper h1 {
+	font-family: Novecentosanswide;
+	color: #fff;
+	font-size: 30px;
+	padding-top: 39px;
+	padding-bottom: 39px;
+	text-align: left;
+	text-transform: uppercase;
+	margin-bottom: 0px;
+}
+
+.GoogleMapWrapper {
+	height: 500px;
+	padding-left: 0px!important;
+	padding-right: 0px!important;
+}
+
+.ContactFormWrapper .container {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	font-family: Helvetica;
+	color: #8a8888;
+}
+
+.ContactForm {
+	margin-right: 110px;
+}
+
+.ContactForm form {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto auto auto auto auto ;
+	font-size: 15px;
+	text-align: left;
+}
+
+.ContactForm h3 {
+	font-size: 24px;
+	text-align: left;
+	margin-bottom: 30px;
+}
+
+.ContactForm p {
+	margin-bottom: 30px;
+	line-height: 1.6;
+	text-align: left;
+}
+
+.ContactForm p:nth-child(2):first-letter {
+	text-transform: capitalize;
+}
+
+.ContactForm form input {
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 17px;
+	max-width: 350px;
+	border: solid #8a8888 2px;
+	outline: none;
+}
+
+.ContactForm form input:focus, .ContactForm form textarea:focus {
+	border: #2ecc71 solid 2px;
+}
+
+.ContactForm form textarea {
+	padding-left: 20px;
+	padding-top: 20px;
+	margin-bottom: 17px;
+	border: solid #8a8888 2px;
+	resize: none;
+	outline: none;
+}
+
+.ContactForm form button {
+	max-width: 140px;
+	border: none;
+	margin-top: 25px;
+	padding: 15px;
+	color: #f2f2f2;
+	transition: color .3s, background-color .3s;
+}
+
+.ContactForm form button:hover, .ContactForm form button:focus {
+	background-color: #34df7d;
+	color: #fff;
+}
+
+.ContactInfoWrapper {
+	text-align: left;
+}
+
+.ContactInfoWrapper h3 {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+.ContactInfoWrapper p:nth-child(2) {
+	margin-bottom: 25px;
+}
+
+.ContactInfoWrapper p:nth-child(3) {
+	font-weight: 700;
+}
+
+.ContactInfoWrapper p:nth-child(4) {
+	background: 25px;
+	margin-bottom: 25px;
+	font-weight: 700;
+}
+
+.ContactInfoWrapper p:nth-child(4) span {
+	font-weight: 500;
+}
+
+.ContactInfoWrapper p:nth-child(6) {
+	margin-bottom: 50px;
+}
+
+.ContactInfoWrapper p {
+	line-height: 1.6;
+}
+
+.ContactInfoWrapper p:nth-child(3) span:nth-child(1) {
+	color: #2ecc71;
+}
+
+.ContactInfoWrapper p:nth-child(2):first-letter {
+	text-transform: capitalize;
+}
+
+.ContactInfoWrapper div {
+	display: grid;
+	grid-template-columns: 60% 40%;
+}
+
+.ContactInfoWrapper div p {
+	line-height: 0.5;
+}
+
+@media screen and (max-width: 1252px) {
+	
+}
+
+/*** Start of large tablet styles ***/
+@media screen and (max-width: 991px) {
+
+}
+
+/*** Start of medium tablet styles ***/
+@media screen and (max-width: 768px) {
+
+	.ContactFormWrapper .container {
+		grid-template-columns: 100%;
+	}
+
+	.ContactForm {
+		margin-right: 0px;
+	}
+
+	.ContactForm h3 {
+		text-align: left;
+		margin-bottom: 20px;
+	}
+
+	.ContactInfoWrapper p {
+		font-size: 15px;
+	}
+
+	.ContactForm form input {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		max-width: 450px;
+	}
+
+	.ContactInfoWrapper {
+		margin-top: 40px;
+	}
+
+	.ContactInfoWrapper h3 {
+		margin-bottom: 20px;
+	}
+
+	.ContactInfoWrapper p {
+		font-size: 15px;
+	}
+
+	.ContactInfoWrapper p:nth-child(6) {
+	    margin-bottom: 30px;
+	}
+}
+
+/*** Start of phone styles ***/
+@media screen and (max-width: 479px) {
+
+}

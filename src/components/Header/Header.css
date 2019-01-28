@@ -12,10 +12,17 @@
     padding-bottom: 30px;
 }
 
+.SocialNetworks svg .filling {
+	transition: fill .3s;
+}
+
+.SocialNetworks svg:hover .filling, .SocialNetworks svg:focus .filling {
+	fill: #00bbf5;
+}
+
 .Logo {
 	text-align: left;
 	grid-area: logo;
-
 }
 
 .SocialNetworks {
@@ -53,5 +60,7 @@
 
 /*** Start of phone styles ***/
 @media screen and (max-width: 479px) {
-
+	.Logo svg {
+		max-width: 130px;
+	}
 }

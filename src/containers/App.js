@@ -27,7 +27,6 @@ class App extends Component {
                         <div className="container-fluid header">
                             <div className="container">
                                 <Header className="Header" />
-
                             </div>
                         </div>
                     </header>

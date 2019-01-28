@@ -1,0 +1,247 @@
+.AboutWrapper {
+	padding-left: 0px;
+	padding-bottom: 0px;
+	background-color:  #2ecc71;
+}
+
+.AboutWrapper h1 {
+	font-family: MyriadProRegular;
+	color: #fff;
+	font-size: 30px;
+	padding-top: 39px;
+	padding-bottom: 39px;
+	text-align: left;
+	text-transform: uppercase;
+	margin-bottom: 50px;
+}
+
+.About {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto;
+  	grid-template-areas: 
+  		'pic txt'
+  		'section section';
+  	color: #8a8888;
+  	font-family: MyriadProRegular;
+}
+
+.About h3 {
+	color: #8a8888;
+	font-size: 24px;
+	margin-bottom: 30px;
+	text-transform: uppercase;
+}
+
+.AboutPic {
+	grid-column: 1 / 5;
+	text-align: left;
+	margin-bottom: 50px;
+	margin-right: 28px;
+}
+
+.AboutPic img {
+	width: 100%;
+	height: auto;
+}
+
+.AboutPicTxt {
+	grid-column: 5 / 13;
+	text-align: left;
+}
+
+.AboutPicTxt div:first-letter {
+	text-transform: capitalize;
+}
+
+.AboutTxt {
+	text-align: left;
+}
+
+.AboutTxt p:nth-child(3) {
+	margin-bottom: 30px;
+}
+
+.AboutSectionFirst {
+	grid-column: 1 / 6;
+	text-align: left;
+	margin-right: 50px;
+	margin-bottom: 50px;
+}
+
+.AboutSectionSecond {
+	grid-column: 6 / 13;
+	text-align: left;
+}
+
+.ServicesWrapper {
+	font-family: MyriadProRegular;
+	color: #737373;
+}
+
+.ServicesTitle {
+	font-family: MyriadProRegular;
+	font-size: 24px;
+	color: #737373;
+	text-transform: uppercase;
+	text-align: left;
+	margin-bottom: 30px;
+}
+
+.Services {
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 100%;
+}
+
+.Services div {
+	font-size: 18px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.Services div:hover, .Services div:focus {
+	background-color: #dadada;
+}
+
+.Services div h3 {
+	margin-top: 10px;
+}
+
+.react-tabs__tab-list {
+    border-bottom: none!important;
+    -webkit-tap-highlight-color: transparent;
+    display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 100%;
+}
+
+.react-tabs__tab--selected {
+	background: none!important;
+}
+
+.react-tabs__tab--selected {
+	fill: red;
+}
+
+.react-tabs__tab--selected:hover, .react-tabs__tab--selected:focus {
+    background: #dadada!important;
+    border-color: transparent;
+    color: none;
+    border-radius: 0 0 0 0!important;
+}
+
+.ServicesWrapper .react-tabs__tab {
+	border: none!important;
+	font-size: 18px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	cursor: pointer;
+}
+.ServicesWrapper .react-tabs__tab im {
+	display: block;
+}
+
+.ServicesWrapper .react-tabs__tab h3 {
+	text-align: center;
+}
+
+.Bottom {
+	background-color: #fff;
+}
+
+.AboutTxt:first-letter {
+	text-transform: capitalize;
+}
+
+.AboutSectionFirst div:first-letter, .AboutSectionSecond div:first-letter {
+	text-transform: capitalize;
+}
+
+.Sentences {
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.Sentences div {
+	text-align: left;
+}
+
+.Particle {
+	display: inline-block;
+	padding-bottom: 15px;
+}
+
+.Sentences div:first-letter {
+  	text-transform: capitalize;
+}
+
+.Sentences div span {
+	padding-right: 10px;
+}
+
+/*** Start of large tablet styles ***/
+@media screen and (max-width: 991px) {
+
+}
+
+/*** Start of medium tablet styles ***/
+@media screen and (max-width: 768px) {
+
+	.AboutPic {
+		grid-column: 1 / 13;
+		margin-bottom: 30px;
+	}
+
+	.AboutPicTxt {
+		grid-column: 1 / 13;
+		margin-bottom: 30px;
+	}
+
+	.AboutTxt p:nth-child(3) {
+		margin-bottom: 30px;
+	}
+
+	.AboutSectionFirst {
+		grid-column: 1 / 13;
+		margin-right: 50px;
+		margin-bottom: 30px;
+	}
+
+	.AboutSectionSecond {
+		grid-column: 1 / 13;
+	}
+
+	.ServicesTitle {
+		margin-top: 30px;
+		margin-bottom: 10px;
+	}
+
+	.ServicesWrapper .react-tabs__tab-list {
+		margin-bottom: 30px;
+	}
+
+	.ServicesWrapper .react-tabs__tab {
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	.ServicesWrapper h3 {
+		font-size: 13px;
+	}
+
+	.Sentences div {
+	}
+
+	.Sentences div span {
+		display: none;
+	}
+
+	.Sentences div .Particle {
+		text-align: left;
+		padding-left: 20px;
+		background: url("../.././assets/images/about-arrow.svg") no-repeat left top;
+	}
+}

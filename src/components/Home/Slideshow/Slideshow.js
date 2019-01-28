@@ -7,22 +7,34 @@ import Jezik from '../../../assets/images/project-jezik.jpg';
 import SocialMedia from '../../../assets/images/project-social-media.jpg';
 import Link from '../../../assets/images/link.png';
 import './Slideshow.css';
+import axios from 'axios';
+import Project from './Project/Project';
  
 class Slideshow extends Component {
     constructor(props) {
         super(props);
         this.state = {
           nav1: null,
-          nav2: null
+          nav2: null,
+          projects: []
         };
     }
 
-    componentDidMount() {
+    componentDidMount () {
       this.setState({
-          nav1: this.slider1,
-          nav2: this.slider2
-      });
-  }
+            nav1: this.slider1,
+            nav2: this.slider2
+        });
+
+        axios.get('http://jsonplaceholder.typicode.com/posts')
+        .then(response => {
+        const projects = response.data.slice(0, 10);
+          this.setState({projects: projects})
+          })
+            .catch(error => {
+                this.setState({error: true});
+          });
+    }
 
     render() {
         const settingsGallery = {
@@ -32,23 +44,23 @@ class Slideshow extends Component {
             slidesToShow: 3,
             slidesToScroll: 1,
             responsive: [
-              {
-                breakpoint: 991,
-                settings: {
-                  slidesToShow: 1,
-                  infinite: true,
-                  arrows: true,
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1,
+                        infinite: true,
+                        arrows: true,
+                    }
                 }
-              }
             ]
         };
 
         const settingsTxt = {
-          arrows: false,
-          infinite: true,
-          speed: 500,
-          slidesToShow: 1,
-          slidesToScroll: 1
+            arrows: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
         };
 
       return (
@@ -60,10 +72,10 @@ class Slideshow extends Component {
               <div className="FirstImage"><img src={Jezik} alt="Jezik"/></div>
               <div className="SecondImage"><img src={Jes} alt="Jes"/></div>
               <Slider
-              asNavFor={this.state.nav2}
-              ref={slider => (this.slider1 = slider)}
-              {...settingsGallery}
-            >
+                  asNavFor={this.state.nav2}
+                  ref={slider => (this.slider1 = slider)}
+                  {...settingsGallery}
+              >
                 <div className="LinkWrapper">
                     <img src={BoyAndGirl} alt="Boy and girl"/>
                     <img src={Link} alt="Link"/>
@@ -138,7 +150,21 @@ class Slideshow extends Component {
               swipeToSlide={true}
               focusOnSelect={true}
           >
-            <div>
+    
+              {
+                this.state.projects.map((project, index) => {
+                    return (
+                        <Project
+                            id={project.id}
+                            title={project.title}
+                            project={project.body}
+                            key={index}
+                        />
+                      )
+                  })
+              }
+          
+            {/*<div>
                 <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
                 <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
@@ -179,7 +205,7 @@ class Slideshow extends Component {
                 <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
                 </p>
-            </div>
+            </div>*/}
           </Slider>
         </div>
       );

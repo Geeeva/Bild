@@ -2,6 +2,14 @@
 	padding-left: 40px;
 }
 
+.NavFooter a {
+	transition: color .4s;
+}
+
+.NavFooter a:hover, .NavFooter a:focus {
+	color: #2ecc71!important;
+}
+
 /*** Start of medium tablet styles ***/
 @media screen and (max-width: 768px) {
 	.NavFooter {
