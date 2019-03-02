@@ -1,6 +1,4 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
-import Route from 'react-router-dom/Route';
 import MenuFooter from '../MenuFooter/MenuFooter';
 import './Footer.css';
 
@@ -29,4 +27,4 @@ const footer = () => {
     )
 }
 
-export default withRouter(footer);
+export default footer;
