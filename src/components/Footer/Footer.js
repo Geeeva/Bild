@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, NavLink, Redirect, Prompt} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import MenuFooter from '../MenuFooter/MenuFooter';
 import './Footer.css';
@@ -29,4 +29,4 @@ const footer = () => {
     )
 }
 
-export default footer;
+export default withRouter(footer);

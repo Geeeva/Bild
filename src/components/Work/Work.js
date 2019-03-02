@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
 import './Work.css';
-import GridView from '../.././assets/images/gridView.svg';
-import ListView from '../.././assets/images/listView.svg';
 import WorkButtons from '../.././assets/images/work-buttons.jpg';
 import WorkEgg from '../.././assets/images/work-egg.jpg';
 import WorkGiraffe from '../.././assets/images/work-giraffe.jpg';

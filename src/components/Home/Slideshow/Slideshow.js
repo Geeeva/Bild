@@ -55,13 +55,13 @@ class Slideshow extends Component {
             ]
         };
 
-        const settingsTxt = {
+        /*const settingsTxt = {
             arrows: false,
             infinite: true,
             speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1
-        };
+        };*/
 
       return (
           <div className="container">

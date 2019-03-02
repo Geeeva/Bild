@@ -1,6 +1,5 @@
 import React from 'react';
 import Route from 'react-router-dom/Route';
-import {BrowserRouter as Router, NavLink, Redirect, Prompt} from 'react-router-dom';
 
 const notfound = () => {
     return (

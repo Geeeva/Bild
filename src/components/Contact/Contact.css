@@ -58,11 +58,12 @@
 	text-transform: capitalize;
 }
 
-.ContactForm form input {
+.ContactForm form div input, .ContactForm form input {
 	padding-left: 20px;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	margin-bottom: 17px;
+	min-width: 350px;
 	max-width: 350px;
 	border: solid #8a8888 2px;
 	outline: none;
@@ -75,6 +76,7 @@
 .ContactForm form textarea {
 	padding-left: 20px;
 	padding-top: 20px;
+	width: 100%;
 	margin-bottom: 17px;
 	border: solid #8a8888 2px;
 	resize: none;
@@ -145,6 +147,56 @@
 
 .ContactInfoWrapper div p {
 	line-height: 0.5;
+}
+
+/*Tooltiptext*/
+
+.nameError, .emailError, .messageError {
+    position: relative;
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+}
+
+.nameError .tooltiptext, .emailError .tooltiptext, .messageError .tooltiptext {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    z-index: 1;
+    width: auto;
+    font-size: 18px;
+    background-color: #000;
+    color: #fff;
+    text-align: left;
+    border-radius: 8px;
+    padding: 3px 15px 3px 15px;
+    opacity: 0;
+    -webkit-transition:  opacity .3s ease-in-out, -webkit-transform .3s ease-in-out;
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+}
+
+.nameError .tooltiptext::after, .emailError .tooltiptext::after, .messageError .tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 5%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #000 transparent;
+}
+
+.nameError .visible, .emailError .visible, .messageError .visible {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+form label {
+    margin-top: 35px;
 }
 
 @media screen and (max-width: 1252px) {

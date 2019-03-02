@@ -1,5 +1,6 @@
 import React from 'react';
 import MenuHeader from '../MenuHeader/MenuHeader';
+import {withRouter} from 'react-router-dom';
 import './Header.css';
 
 const header = () => {
@@ -77,4 +78,4 @@ const header = () => {
     )
 }
 
-export default header;
+export default withRouter(header);

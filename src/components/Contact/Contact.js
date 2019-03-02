@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
 import './Contact.css';
 import GoogleMap from './GoogleMap/GoogleMap';
-import axios from 'axios';
-import ReCAPTCHA from "react-google-recaptcha";
+import axios from '../.././axios-contact-form';
+import Recaptcha from 'react-recaptcha';
+import {withRouter} from 'react-router-dom';
 
 class Contact extends Component {
 	constructor() {
@@ -18,12 +19,13 @@ class Contact extends Component {
             subject: '',
             message: '',
             messageError: '',
-            isButtonDisabled: false
+            isButtonDisabled: false,
+            isVerified: false,
+            messageSuccess: false
         };
     }
 
     changeHandler = (event) => {
-    	//this.props.changedSource({[event.target.name]: event.target.value});
     	this.setState({
     		[event.target.name]: event.target.value
     	})
@@ -32,13 +34,13 @@ class Contact extends Component {
     validate = () => {
     	let isError = false;
     	console.log(isError);
-    	const errors = {};
+    	const errors = [];
     	
     	console.log(errors);
 
     	if(this.state.name.length < 5) {
     		isError = true;
-    		errors.nameError = 'Task name needs to be at least 5 long';
+    		errors.nameError = 'Name needs to be at least 5 long';
     	} else {
     		errors.nameError = '';
     	}
@@ -50,7 +52,7 @@ class Contact extends Component {
     		errors.emailError = '';
     	}
 
-    	if(this.state.message > 1000) {
+    	if(this.state.message.length > 1000) {
     		isError = true;
     		errors.messageError = 'Message must be no longer then 1000 charachters long';
     	} else {
@@ -61,7 +63,7 @@ class Contact extends Component {
     		this.setState({
     			...errors
     		})
-    	}	
+    	}
     	console.log(isError);
     	return isError;
     }
@@ -72,12 +74,16 @@ class Contact extends Component {
     	
         event.preventDefault();
 
-    	let taskTitle = this.state.taskTitle;
-        let taskDescription = this.state.taskDescription;
+		const err = this.validate();
 
-		const err = this.validate();															
-    	console.log(err);
-		if(!err) {
+		const contact = { 
+	        name: this.state.name, 
+	        email: this.state.email, 
+	        subject: this.state.subject, 
+	        message: this.state.message, 
+	    }															
+
+		if(err === false && this.state.isVerified) {
 	    	this.setState({
 	    		name: '',
 	          	nameError: '',
@@ -87,10 +93,35 @@ class Contact extends Component {
 	            message: '',
 	            messageError: ''
 	    	})
+
+	    axios.post('contact.json', contact)
+          .then(response => console.log(response))
+          .catch(error => console.log(error));
+	    } else {
+	    	alert('Pls.verify that you are a human');
 	    }
+
+	    
+
+	    this.setState({
+			isVerified: false
+		})
+    }
+
+    recaptchaLoadedHandler = () => {
+    	console.log('Recaptcha successfully loaded');
+    }
+
+    verifyCallbackHandler = (response) => {
+    	if(response) {
+    		this.setState({
+    			isVerified: true
+    		})
+    	}
     }
 
     componentDidMount () {
+    	console.log(this.props);
         axios.get('http://jsonplaceholder.typicode.com/posts')
         .then(response => {
         const paragraphs = response.data.slice(0, 1);
@@ -99,17 +130,24 @@ class Contact extends Component {
             .catch(error => {
                 this.setState({error: true});
           	});
+
+        if (this.captchaDemo) {
+	        console.log("started, just a second...")
+	        this.captchaDemo.reset();
+	    }
     }
 
 	render() {
 
 		const paragraph = this.state.paragraphs.map((paragraph, index) => {
 			return (
-				<React.Fragment>
+				<React.Fragment
+					key={index}>
 					{paragraph.body}
 				</React.Fragment>
 			)
 		});
+
 		return (
 			<React.Fragment>
 				<div className="container-fluid ContactWrapper">
@@ -131,23 +169,39 @@ class Contact extends Component {
 							<h3>CONTACT FORM</h3>
 							<p>{paragraph}</p>
 							<form>
-								<input 
-								type="text" 
-								required="required" 
-								name="name" 
-								placeholder="Name" 
-								value={this.state.name}
-	                    		onChange={event => this.changeHandler(event)}
-                    			/>
-
-								<input 
-									type="email" 
-									required="required" 
-									name="email" 
-									placeholder="Email Address"
-									value={this.state.email}
-		                    		onChange={event => this.changeHandler(event)}
-	                    		/>
+								<div>
+									<input 
+										type="text" 
+										//required="required" 
+										name="name" 
+										placeholder="Name" 
+										value={this.state.name}
+			                    		onChange={event => this.changeHandler(event)}
+	                    			/>
+	                    			{/* Notification nameError */}
+	                                <div className="nameError">
+	                                    <span 
+	                                        className={"tooltiptext" + (this.state.nameError === "Name needs to be at least 5 long" ?
+	                                         ' visible' : '')}>{this.state.nameError}</span>
+	                                </div>
+								</div>
+								
+								<div>
+									<input 
+										type="email" 
+										//required="required" 
+										name="email" 
+										placeholder="Email Address"
+										value={this.state.email}
+			                    		onChange={event => this.changeHandler(event)}
+		                    		/>
+		                    		{/* Notification emailError */}
+	                                <div className="emailError">
+	                                    <span 
+	                                        className={"tooltiptext" + (this.state.emailError === "Requires valid email" ?
+	                                         ' visible' : '')}>{this.state.emailError}</span>
+	                                </div>
+		                    	</div>
 
 								<input 
 									type="text" 
@@ -157,25 +211,32 @@ class Contact extends Component {
 									onChange={event => this.changeHandler(event)}
 									/>
 
-								<textarea required="required" 
-									name="message" 
-									cols="30" 
-									rows="10"
-									value={this.state.message}
-		                    		onChange={event => this.changeHandler(event)}
-	                    		>
-								</textarea>
+								<div>
+									<textarea 
+										//required="required" 
+										name="message" 
+										cols="30" 
+										rows="10"
+										value={this.state.message}
+			                    		onChange={event => this.changeHandler(event)}
+	                    			>
+									</textarea>
+									{/* Notification messageError */}
+	                                <div className="messageError">
+	                                    <span 
+	                                        className={"tooltiptext" + (this.state.messageError === "Message must be no longer then 1000 charachters long" ?
+	                                         ' visible' : '')}>{this.state.messageError}</span>
+	                                </div>
+								</div>
 
-								<ReCAPTCHA
-						            style={{ display: "inline-block" }}
-						            theme="dark"
-						            ref={this._reCaptchaRef}
-						            sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-						            onChange={this.handleChange}
-						            asyncScriptOnLoad={this.asyncScriptOnLoad}
-						          />
+								 <Recaptcha
+								    sitekey="6Ld1h5QUAAAAALDNUdmIBZen1JSjVe0LpJJ185RV"
+								    render="explicit"
+								    onloadCallback={this.recaptchaLoadedHandler}
+								    verifyCallback={this.verifyCallbackHandler}
+								  />
 
-								<button>SEND MESSAGE</button>
+								<button onClick={event => this.submitHandler(event)}>SEND MESSAGE</button>
 							</form>
 							
 						</div>
@@ -202,4 +263,4 @@ class Contact extends Component {
 	}
 }
 
-export default Contact;
+export default withRouter(Contact);
