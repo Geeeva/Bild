@@ -1,4 +1,4 @@
-import createBrowserHistory from 'history/createBrowserHistory';
+/*import createBrowserHistory from 'history/createBrowserHistory';
 import createHashHistory from 'history/createHashHistory';
 import { homepage } from '../../package.json';
 
@@ -15,6 +15,14 @@ if (homepage === process.env.REACT_APP_TEST_HOMEPAGE) {
 
 const history = createHistory({
   basename
+});
+
+export default history;*/
+
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const history = createBrowserHistory({
+  basename: 'Bild',
 });
 
 export default history;
