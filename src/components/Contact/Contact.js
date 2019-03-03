@@ -68,7 +68,7 @@ class Contact extends Component {
     	return isError;
     }
 
-    //Za submit button
+    //For submit button
 
     submitHandler = (event) => {
     	
@@ -97,12 +97,8 @@ class Contact extends Component {
 	    axios.post('contact.json', contact)
           .then(response => console.log(response))
           .catch(error => console.log(error));
-	    } else {
-	    	alert('Pls.verify that you are a human');
-	    }
-
+	    } 
 	    
-
 	    this.setState({
 			isVerified: false
 		})
