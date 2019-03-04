@@ -20,7 +20,7 @@ class Contact extends Component {
             message: '',
             messageError: '',
             isButtonDisabled: false,
-            isVerified: false,
+            //isVerified: false,
             messageSuccess: false
         };
     }
@@ -52,7 +52,7 @@ class Contact extends Component {
     		errors.emailError = '';
     	}
 
-    	if(this.state.message.length > 1000) {
+    	if(this.state.message.length === 0 || this.state.message.length > 1000) {
     		isError = true;
     		errors.messageError = 'Message must be no longer then 1000 charachters long';
     	} else {
@@ -225,12 +225,12 @@ class Contact extends Component {
 	                                </div>
 								</div>
 
-								 <Recaptcha
-								    sitekey="6Ld1h5QUAAAAALDNUdmIBZen1JSjVe0LpJJ185RV"
+								 {/*<Recaptcha
+								    sitekey="6LeuLJUUAAAAAGPFOx5RonuGjU8RwbvC6l2rSgjK"
 								    render="explicit"
 								    onloadCallback={this.recaptchaLoadedHandler}
 								    verifyCallback={this.verifyCallbackHandler}
-								  />
+								  />*/}
 
 								<button onClick={event => this.submitHandler(event)}>SEND MESSAGE</button>
 							</form>

@@ -22,7 +22,7 @@ export default history;*/
 import createBrowserHistory from 'history/createBrowserHistory';
 
 const history = createBrowserHistory({
-  basename: 'https://geeeva.github.io/Bild/',
+  basename: 'http://localhost:3000/',
 });
 
 export default history;
