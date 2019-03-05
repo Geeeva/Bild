@@ -1,4 +1,4 @@
-import createBrowserHistory from 'history/createBrowserHistory';
+/*import createBrowserHistory from 'history/createBrowserHistory';
 import createHashHistory from 'history/createHashHistory';
 import { homepage } from '../../package.json';
 
@@ -17,4 +17,4 @@ const history = createHistory({
   basename
 });
 
-export default history;
+export default history;*/

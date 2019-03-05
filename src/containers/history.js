@@ -25,4 +25,8 @@ const history = createBrowserHistory({
   basename: 'http://localhost:3000/',
 });
 
+history.listen(location => {
+  console.log(location.pathname); // /home
+});
+
 export default history;

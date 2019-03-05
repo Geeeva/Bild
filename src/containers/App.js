@@ -22,7 +22,7 @@ class App extends Component {
 
     render() {
         return (
-            <Router /*history={history}*/>
+            <Router basename="https://geeeva.github.io/Bild/">
                 <div className="App">
                     <header>    
                         <div className="container-fluid header">
