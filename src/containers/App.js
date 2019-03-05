@@ -22,7 +22,7 @@ class App extends Component {
 
     render() {
         return (
-            <Router basename="https://geeeva.github.io/Bild/">
+            <Router basename="/Bild/">
                 <div className="App">
                     <header>    
                         <div className="container-fluid header">
