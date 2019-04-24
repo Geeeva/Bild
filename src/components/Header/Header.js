@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import MenuHeader from '../MenuHeader/MenuHeader';
 import './Header.css';
 
-const header = (props) => {
+const header = props => {
     return (
         <div>
             <div className="SocialNetworksWrapper">

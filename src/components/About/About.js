@@ -12,16 +12,13 @@ import "react-tabs/style/react-tabs.css";
 import AboutArrow from '../.././assets/images/about-arrow.svg';
 
 class About extends Component {
-	 constructor() {
-        super();
-        this.state = {
-          	articles: [],
-          	services: null,
-          	active: null
-        };
-    }
-
-    tabHanddler = (event) => {
+	 state= {
+			articles: [],
+			services: null,
+			active: null
+	};
+	
+    tabHanddler = event => {
     	this.setState({active: true})
     }
 
@@ -97,31 +94,7 @@ class About extends Component {
 				<div className="container">
 					<h3 className="ServicesTitle">Services</h3>
 				</div>
-				{/*<div className="container-fluid ServicesWrapper">
-					<div className="container">
-						<div className="Services">
-							<div className="Websites" onClick={this.tabHanddler.bind(this)}>
-								<img src={Websites} alt="Websites"/>
-								<h3>WEBSITES</h3>
-							</div>
-							<div className="Photography" onClick={this.tabHanddler.bind(this)}>
-								<img src={Photography} alt="Photography"/>
-								<h3>PHOTOGRAPHY</h3>
-							</div>
-							<div className="Seo" onClick={this.tabHanddler.bind(this)}>
-								<img src={Seo} alt="Seo"/>
-								<h3>SEO</h3>
-							</div>
-							<div className="Applications" onClick={this.tabHanddler.bind(this)}>
-								<img src={Applications} alt="Applications"/>
-								<h3>APPLICATIONS</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="Tabs">
-					<Tabs data={this.state.articles}/>
-				</div>*/}
+				
 				<div className="container-fluid ServicesWrapper">
 					<div className="container">
 						<Tabs>

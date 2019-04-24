@@ -40,7 +40,7 @@ class Contact extends Component {
 
     	if(this.state.name.length < 5) {
     		isError = true;
-    		errors.nameError = 'Name needs to be at least 5 long';
+    		errors.nameError = 'Name needs to be at least 5 characters long';
     	} else {
     		errors.nameError = '';
     	}

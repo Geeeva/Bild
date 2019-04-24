@@ -11,17 +11,14 @@ import axios from 'axios';
 import Project from './Project/Project';
  
 class Slideshow extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          nav1: null,
-          nav2: null,
-          projects: []
-        };
+    state = {
+        nav1: null,
+        nav2: null,
+        projects: []
     }
 
     componentDidMount () {
-      this.setState({
+        this.setState({
             nav1: this.slider1,
             nav2: this.slider2
         });
@@ -29,11 +26,11 @@ class Slideshow extends Component {
         axios.get('http://jsonplaceholder.typicode.com/posts')
         .then(response => {
         const projects = response.data.slice(0, 10);
-          this.setState({projects: projects})
-          })
+            this.setState({projects: projects})
+            })
             .catch(error => {
                 this.setState({error: true});
-          });
+            });
     }
 
     render() {
@@ -55,27 +52,19 @@ class Slideshow extends Component {
             ]
         };
 
-        /*const settingsTxt = {
-            arrows: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
-        };*/
-
-      return (
-          <div className="container">
-              <h3 className="FeaturedTitle">A Couple of Our Featured Projects</h3>
-              <p className="FeaturedTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. 
-                  Fusce velit justo, faucibus eu sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis tincidunt eros.
-              </p>
-              <div className="FirstImage"><img src={Jezik} alt="Jezik"/></div>
-              <div className="SecondImage"><img src={Jes} alt="Jes"/></div>
-              <Slider
-                  asNavFor={this.state.nav2}
-                  ref={slider => (this.slider1 = slider)}
-                  {...settingsGallery}
-              >
+        return (
+            <div className="container">
+                <h3 className="FeaturedTitle">A Couple of Our Featured Projects</h3>
+                <p className="FeaturedTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris. 
+                    Fusce velit justo, faucibus eu sagittis ac, gravida quis tortor. Suspendisse non urna mi, quis tincidunt eros.
+                </p>
+                <div className="FirstImage"><img src={Jezik} alt="Jezik"/></div>
+                <div className="SecondImage"><img src={Jes} alt="Jes"/></div>
+                <Slider
+                    asNavFor={this.state.nav2}
+                    ref={slider => (this.slider1 = slider)}
+                    {...settingsGallery}
+                >
                 <div className="LinkWrapper">
                     <img src={BoyAndGirl} alt="Boy and girl"/>
                     <img src={Link} alt="Link"/>
@@ -151,61 +140,18 @@ class Slideshow extends Component {
               focusOnSelect={true}
           >
     
-              {
-                this.state.projects.map((project, index) => {
-                    return (
-                        <Project
-                            id={project.id}
-                            title={project.title}
-                            project={project.body}
-                            key={index}
-                        />
-                      )
-                  })
-              }
-          
-            {/*<div>
-                <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
-                <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
-                </p>
-            </div>
-            <div>
-                <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
-                <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
-                </p>
-            </div>
-            <div>
-                <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
-                <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
-                </p>
-            </div>
-            <div>
-                <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
-                <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
-                </p>
-            </div>
-            <div>
-                <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
-                <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
-                </p>
-            </div>
-            <div>
-                <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
-                <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
-                </p>
-            </div>
-            <div>
-                <h3 className="DetailsTitle">{'Dark UI Kit Freebie'}</h3>
-                <p className="DetailsTxt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque eu erat lacus, vel congue mauris. Fusce velit justo, faucibus eu sagittis.
-                </p>
-            </div>*/}
+            {
+            this.state.projects.map((project, index) => {
+                return (
+                    <Project
+                        id={project.id}
+                        title={project.title}
+                        project={project.body}
+                        key={index}
+                    />
+                    )
+                })
+            }
           </Slider>
         </div>
       );

@@ -13,13 +13,13 @@ import WorkSmiling from '../.././assets/images/work-smiling.jpg';
 import Overlay from '../.././assets/images/work-overlay.png';
 import Link from '../.././assets/images/link.png';
 
-	const filters = {
-		ALL: [WorkButtons, WorkEgg, WorkGiraffe, WorkGuys, WorkJes, WorkPistol, WorkSliding, WorkSocialMedia, WorkSmiling],
-	  	PRINT: [WorkJes, WorkEgg, WorkPistol, WorkGiraffe],
-	  	PHOTOGRAPHY: [WorkSliding],
-	  	WEB: [WorkSmiling, WorkGuys, WorkGiraffe],
-	  	APPLICATIONS: [WorkButtons]
-	};
+const filters = {
+	ALL: [WorkButtons, WorkEgg, WorkGiraffe, WorkGuys, WorkJes, WorkPistol, WorkSliding, WorkSocialMedia, WorkSmiling],
+		PRINT: [WorkJes, WorkEgg, WorkPistol, WorkGiraffe],
+		PHOTOGRAPHY: [WorkSliding],
+		WEB: [WorkSmiling, WorkGuys, WorkGiraffe],
+		APPLICATIONS: [WorkButtons]
+};
 
 class Work extends Component {
 	constructor(props) {
@@ -70,14 +70,14 @@ class Work extends Component {
 						<div className="Works">
 							<div className="FilteredView">
 								<div>{Object.keys(filters).map(filter => (
-						            <button className={(this.state.selectedFilter ? ' active' : '') } value={filter} onClick={this.filterHandler.bind(this)}>
-						              {filter}<span className="slash">&#47;</span>
-						            </button>
-				          		))}
-				          		</div>
+									<button className={(this.state.selectedFilter ? ' active' : '')} value={filter} onClick={this.filterHandler.bind(this)}>
+										{filter}<span className="slash">&#47;</span>
+									</button>
+								))}
+								</div>
 							</div>
 							<div className="GridListView">
-								<button  onClick={this.gridViewHandler}>
+								<button onClick={this.gridViewHandler}>
 									<svg preserveAspectRatio="xMidYMid" width="15" height="15" viewBox="0 0 15 15">
 										 <path id="grid" d="M8.967,15.000 L8.967,8.905 L15.000,8.905 L15.000,15.000 L8.967,15.000 ZM8.946,0.000 L15.000,0.000 L15.000,6.012 L8.946,6.012 L8.946,0.000 ZM0.000,0.000 L6.033,0.000 L6.033,5.929 L0.000,5.929 L0.000,0.000 ZM6.012,15.000 L0.000,15.000 L0.000,8.905 L6.012,8.905 L6.012,15.000 Z"/>
 									</svg>

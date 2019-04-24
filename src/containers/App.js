@@ -8,18 +8,9 @@ import About from '../components/About/About';
 import Work from '../components/Work/Work';
 import Contact from '../components/Contact/Contact';
 import NotFound from '../components/NotFound/NotFound';
-//import history from './history';
 import './App.css';
 
 class App extends Component {
-    
-    constructor(props) {
-        super(props);
-
-        this.state = {
-        }
-    }
-
     render() {
         return (
             <Router basename="/Bild/">

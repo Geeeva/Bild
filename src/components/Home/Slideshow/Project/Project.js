@@ -1,6 +1,6 @@
 import React from 'react';
 
-const project = (props) => {
+const project = props => {
 	return (
 		<div>
             <h3 className="DetailsTitle">{props.title}</h3>
