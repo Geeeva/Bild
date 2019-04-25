@@ -1,5 +1,5 @@
 import React from 'react';
-import {NavLink, withRouter} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './MenuHeader.css';
 
 const menuHeader = props => {
@@ -13,4 +13,4 @@ const menuHeader = props => {
     )
 }
 
-export default withRouter(menuHeader);
+export default menuHeader;

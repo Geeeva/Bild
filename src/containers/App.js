@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Home from '../components/Home/Home';
 import About from '../components/About/About';
@@ -24,11 +24,13 @@ class App extends Component {
                     </header>
                     <main>    
                         <div className="Main">
-                            <Route className="Home" path="/" exact strict component={Home}/>
-                            <Route className="About" path="/about" exact strict component={About}/>
-                            <Route className="Work" path="/work" exact strict component={Work}/>
-                            <Route className="Contact" path="/contact" exact strict component={Contact}/>
-                            <Route component={NotFound} />
+                            <Switch>
+                                <Route className="Home" path="/" exact strict component={Home}/>
+                                <Route className="About" path="/about" exact strict component={About}/>
+                                <Route className="Work" path="/work" exact strict component={Work}/>
+                                <Route className="Contact" path="/contact" exact strict component={Contact}/>
+                                <Route className="NotFound" exact strict component={NotFound}/>
+                            </Switch>
                         </div>
                     </main>
                     <footer>

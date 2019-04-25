@@ -8,8 +8,9 @@ Used tools:
 - **SVGs**
 - **External library - Normalize.css** 
 
-PSD to HTML project in React. All site data is being extracted and used from JSONPlaceholder rest API.
+Presentional webpage, PSD to HTML project in React. All site data is being extracted and used from JSONPlaceholder rest API.
 Site navigation is setup with React Router. Small icons are in SVG format. Contact email form built with fields validation.
+react-meta-tags used for SEO.
 
 #Steps to run this project:
 
