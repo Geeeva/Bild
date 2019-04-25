@@ -1,0 +1,7 @@
+.NotFound {
+    height: 50vh;
+    font-family: MyriadProRegular;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}

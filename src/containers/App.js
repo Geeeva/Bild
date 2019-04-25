@@ -28,7 +28,7 @@ class App extends Component {
                             <Route className="About" path="/about" exact strict component={About}/>
                             <Route className="Work" path="/work" exact strict component={Work}/>
                             <Route className="Contact" path="/contact" exact strict component={Contact}/>
-                            <Route path="/404" component={NotFound} />
+                            <Route component={NotFound} />
                         </div>
                     </main>
                     <footer>
