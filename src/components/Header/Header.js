@@ -5,7 +5,7 @@ import './Header.css';
 
 const header = props => {
     return (
-        <div>
+        <React.Fragment>
             <div className="SocialNetworksWrapper">
                 <div className="Logo">
                     <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
@@ -74,7 +74,7 @@ const header = props => {
             </div>
             <hr className="break"/>
             <MenuHeader className="MenuHeader" />
-        </div>
+        </React.Fragment>
     )
 }
 

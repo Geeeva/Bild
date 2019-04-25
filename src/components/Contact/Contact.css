@@ -228,10 +228,11 @@ form label {
 		font-size: 15px;
 	}
 
-	.ContactForm form input {
+	.ContactForm form div input, .ContactForm form input {
 		padding-top: 10px;
 		padding-bottom: 10px;
-		max-width: 450px;
+		min-width: 100%;
+		max-width: 100%;
 	}
 
 	.ContactInfoWrapper {

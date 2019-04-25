@@ -1,7 +1,3 @@
-.Header {
-	
-}
-
 .SocialNetworksWrapper {
 	display: grid;
 	grid-template-columns: 50% 50%;
@@ -45,7 +41,6 @@
 
 /*** Start of medium tablet styles ***/
 @media screen and (max-width: 768px) {
-  	
 	.SocialNetworksWrapper {
 		padding-top: 10px;
 		grid-template-columns: 35% 65%;
@@ -62,5 +57,25 @@
 @media screen and (max-width: 479px) {
 	.Logo svg {
 		max-width: 130px;
+	}
+
+	.SocialNetworks svg {
+		width: 35px;
+	}
+}
+
+@media screen and (max-width: 410px) {
+	.Logo svg {
+		max-width: 85px;
+	}
+
+	.SocialNetworks svg {
+		width: 28px;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.SocialNetworks svg {
+		width: 30px;
 	}
 }

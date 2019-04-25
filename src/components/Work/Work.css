@@ -16,8 +16,11 @@
 }
 
 .Works {
-	display: grid;
 	font-family: MyriadProRegular;
+	display: grid;
+	grid-template-columns: 90% 10%;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 .Works button {
@@ -37,13 +40,6 @@
 
 .slash:nth-child(5) {
 	display: none;
-}
-
-.Works {
-	display: grid;
-	grid-template-columns: 90% 10%;
-	margin-top: 50px;
-	margin-bottom: 50px;
 }
 
 .GridListView {
@@ -191,4 +187,41 @@ button:hover #list, button:focus #list, button:hover #grid, button:focus #grid {
 .Preview li:nth-of-type(9) {
 	grid-column: 3 / 4;
     grid-row: 3 / 4;
+}
+
+@media screen and (max-width: 479px) {
+	.container-fluid:nth-child(3) {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.container {
+		margin: 0 auto;
+	}
+
+	.Preview {
+		justify-content: center;
+	}
+
+	.Preview a li .OverlayWrapper .Link {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: auto;
+		height: 60%;
+	}
+
+	.Preview a li img:first-child {
+		width: 85%;
+	}
+	
+	.GridListView {
+		justify-self: center;
+	}
+
+	.GridListView button:nth-child(1) {
+		width: 10px;
+		padding-right: 3px;
+	}
 }

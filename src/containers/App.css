@@ -56,6 +56,30 @@ button {
     max-width: 100%;
 }
 
+@media (min-width: 320px) {
+    .container {
+        width: 300px;
+    }
+}
+
+@media (min-width: 410px) {
+    .container {
+        width: 430px;
+    }
+}
+
+@media (min-width: 479px) {
+    .container {
+        width: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
 @media (min-width: 768px) {
     .container {
         width: 750px;
@@ -93,11 +117,6 @@ button {
 /*** Start of phone styles ***/
 @media screen and (max-width: 479px) {
     .container-fluid {
-        padding-right: 0px;
-        padding-left: 0px;
-    }
-
-    .container {
         padding-right: 15px;
         padding-left: 15px;
     }

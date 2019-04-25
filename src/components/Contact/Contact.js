@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
-import './Contact.css';
 import GoogleMap from './GoogleMap/GoogleMap';
 import axios from '../.././axios-contact-form';
-import Recaptcha from 'react-recaptcha';
 import {withRouter} from 'react-router-dom';
+import './Contact.css';
 
 class Contact extends Component {
-	constructor() {
-        super();
+	state = {
+		paragraphs: [],
+		name: '',
+		nameError: '',
+		email: '',
+		emailError: '',
+		subject: '',
+		message: '',
+		messageError: '',
+		isButtonDisabled: false,
+		messageSuccess: false
+	};
 
-        this.state = {
-          	paragraphs: [],
-          	name: '',
-          	nameError: '',
-            email: '',
-            emailError: '',
-            subject: '',
-            message: '',
-            messageError: '',
-            isButtonDisabled: false,
-            //isVerified: false,
-            messageSuccess: false
-        };
-    }
-
-    changeHandler = (event) => {
+    changeHandler = event => {
     	this.setState({
     		[event.target.name]: event.target.value
     	})
@@ -33,10 +27,7 @@ class Contact extends Component {
 
     validate = () => {
     	let isError = false;
-    	console.log(isError);
     	const errors = [];
-    	
-    	console.log(errors);
 
     	if(this.state.name.length < 5) {
     		isError = true;
@@ -64,14 +55,11 @@ class Contact extends Component {
     			...errors
     		})
     	}
-    	console.log(isError);
     	return isError;
     }
 
     //For submit button
-
-    submitHandler = (event) => {
-    	
+    submitHandler = event => {
         event.preventDefault();
 
 		const err = this.validate();
@@ -104,20 +92,7 @@ class Contact extends Component {
 		})
     }
 
-    recaptchaLoadedHandler = () => {
-    	console.log('Recaptcha successfully loaded');
-    }
-
-    verifyCallbackHandler = (response) => {
-    	if(response) {
-    		this.setState({
-    			isVerified: true
-    		})
-    	}
-    }
-
     componentDidMount () {
-    	console.log(this.props);
         axios.get('http://jsonplaceholder.typicode.com/posts')
         .then(response => {
         const paragraphs = response.data.slice(0, 1);
@@ -126,15 +101,9 @@ class Contact extends Component {
             .catch(error => {
                 this.setState({error: true});
           	});
-
-        if (this.captchaDemo) {
-	        console.log("started, just a second...")
-	        this.captchaDemo.reset();
-	    }
     }
 
 	render() {
-
 		const paragraph = this.state.paragraphs.map((paragraph, index) => {
 			return (
 				<React.Fragment
@@ -168,7 +137,6 @@ class Contact extends Component {
 								<div>
 									<input 
 										type="text" 
-										//required="required" 
 										name="name" 
 										placeholder="Name" 
 										value={this.state.name}
@@ -185,7 +153,6 @@ class Contact extends Component {
 								<div>
 									<input 
 										type="email" 
-										//required="required" 
 										name="email" 
 										placeholder="Email Address"
 										value={this.state.email}
@@ -209,7 +176,6 @@ class Contact extends Component {
 
 								<div>
 									<textarea 
-										//required="required" 
 										name="message" 
 										cols="30" 
 										rows="10"
@@ -225,16 +191,8 @@ class Contact extends Component {
 	                                </div>
 								</div>
 
-								 {/*<Recaptcha
-								    sitekey="6LeuLJUUAAAAAGPFOx5RonuGjU8RwbvC6l2rSgjK"
-								    render="explicit"
-								    onloadCallback={this.recaptchaLoadedHandler}
-								    verifyCallback={this.verifyCallbackHandler}
-								  />*/}
-
 								<button onClick={event => this.submitHandler(event)}>SEND MESSAGE</button>
 							</form>
-							
 						</div>
 						<div className="ContactInfoWrapper">
 							<h3>CONTACT INFO</h3>

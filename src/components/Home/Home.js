@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import './Home.css';
-import {BrowserRouter as Router, Link, NavLink, Redirect, Prompt} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import HeroBanner from '../.././assets/images/devices.png';
 import Video from '../.././assets/images/video.jpg';
-import Work from '../Work/Work';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Modal from 'react-responsive-modal';
 import Slideshow from './Slideshow/Slideshow';
 import MetaTags from 'react-meta-tags';
+import './Home.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class Home extends Component {
 	state = {
@@ -24,7 +23,7 @@ class Home extends Component {
       	this.setState({ open: false });
     };
 
-	render() {
+	render () {
 		return (
 			<div className="Home">
 			 	<MetaTags>
@@ -53,7 +52,7 @@ class Home extends Component {
 									<img src={Video} alt="Video"/>
 								</button>
 								<Modal open={this.state.open} onClose={this.onCloseModal} center>
-									<iframe width="560" height="315" src="https://www.youtube.com/embed/0FzMZ3jNoco" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<iframe title="youtube" width="560" height="315" src="https://www.youtube.com/embed/0FzMZ3jNoco" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</Modal>
 							</div>
 							<div className="GetToKnowWrapper">
@@ -69,7 +68,6 @@ class Home extends Component {
 									Pellentesque pellentesque arcu a elit congue lacinia.
 								</p>
 							</div>
-						 	
 						</div>  
 					</div>
 				</div>

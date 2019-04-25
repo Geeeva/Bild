@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MetaTags from 'react-meta-tags';
-import './Work.css';
 import WorkButtons from '../.././assets/images/work-buttons.jpg';
 import WorkEgg from '../.././assets/images/work-egg.jpg';
 import WorkGiraffe from '../.././assets/images/work-giraffe.jpg';
@@ -12,6 +11,7 @@ import WorkSocialMedia from '../.././assets/images/work-social-media.jpg';
 import WorkSmiling from '../.././assets/images/work-smiling.jpg';
 import Overlay from '../.././assets/images/work-overlay.png';
 import Link from '../.././assets/images/link.png';
+import './Work.css';
 
 const filters = {
 	ALL: [WorkButtons, WorkEgg, WorkGiraffe, WorkGuys, WorkJes, WorkPistol, WorkSliding, WorkSocialMedia, WorkSmiling],
@@ -69,12 +69,12 @@ class Work extends Component {
 		        	<div className="container">
 						<div className="Works">
 							<div className="FilteredView">
-								<div>{Object.keys(filters).map(filter => (
-									<button className={(this.state.selectedFilter ? ' active' : '')} value={filter} onClick={this.filterHandler.bind(this)}>
+								<React.Fragment>{Object.keys(filters).map((filter, index) => (
+									<button key={index} className={(this.state.selectedFilter ? ' active' : '')} value={filter} onClick={this.filterHandler.bind(this)}>
 										{filter}<span className="slash">&#47;</span>
 									</button>
 								))}
-								</div>
+								</React.Fragment>
 							</div>
 							<div className="GridListView">
 								<button onClick={this.gridViewHandler}>
@@ -85,9 +85,9 @@ class Work extends Component {
 								<button onClick={this.listViewHandler}>
 									<svg  width="15" height="15" viewBox="0 0 15 15">
 									  	<g id="list">
-										    <rect y="12" width="15" height="3" class="cls-1"/>
-										    <rect y="5.969" width="15" height="3.031" class="cls-1"/>
-										    <rect y="-0.031" width="15" height="3.031" class="cls-1"/>
+										    <rect y="12" width="15" height="3" className="cls-1"/>
+										    <rect y="5.969" width="15" height="3.031" className="cls-1"/>
+										    <rect y="-0.031" width="15" height="3.031" className="cls-1"/>
 									  	</g>
 									</svg>
 								</button>
@@ -98,19 +98,19 @@ class Work extends Component {
 				<div className="container-fluid">
 					<div className="container">
 						<ul className={"Preview" + (this.state.list ? ' List' : '')}>
-							{filters[this.state.selectedFilter].map(item => (
-					          	<a href="https://www.google.com/">
-						          	<li>
-						          		<div className="ImageWrapper">
-						          			<img src={item}/>
-						          			<div className="OverlayWrapper">
-							          			<img className="Background" src={Overlay} alt="Overlay"/>
-							          			<img className="Link" src={Link} alt="Link"/>
-							          		</div>
-						          		</div>
-						          	</li>
-						        </a>
-					        ))}
+							{filters[this.state.selectedFilter].map((item, index) => (
+									<a key={index} href="https://www.google.com/">
+											<li>
+													<div className="ImageWrapper">
+															<img src={item} alt="Potfolio + {link}"/>
+															<div className="OverlayWrapper">
+																	<img className="Background" src={Overlay} alt="Overlay"/>
+																	<img className="Link" src={Link} alt="link"/>
+															</div>
+												</div>
+											</li>
+									</a>
+					    ))}
 						</ul>
 					</div>
 				</div>

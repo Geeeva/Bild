@@ -1,5 +1,4 @@
 import React from 'react';
-import Route from 'react-router-dom/Route';
 
 const notfound = () => {
     return (

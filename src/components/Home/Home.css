@@ -177,8 +177,13 @@
 
 /*** Start of phone styles ***/
 @media screen and (max-width: 479px) {
+	.HeroBannerTxt {
+		margin-top: 270px;
+	}
+
 	.YouTube {
-		margin-top: 25px;
+		margin-top: 70px;
+		margin-bottom: 0px;
 		padding-bottom: 20px;
 		padding-right: 0px;
 	}
